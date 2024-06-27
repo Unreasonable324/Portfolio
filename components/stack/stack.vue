@@ -28,7 +28,7 @@ const sorting = (items: any) =>
       <div class="flex flex-col gap-3" v-for="(value, key) in sorting(data?.documents)">
         <div class="text-2xl">{{ key }}</div>
         <div class="flex  gap-3">
-          <div class="rounded-md overflow-hidden" v-for="item in value.sort((a, b) => a.length - b.length)">
+          <div class="rounded-md overflow-hidden" v-for="item in value">
             <img :src="item.icon" alt="" />
           </div>
         </div>
