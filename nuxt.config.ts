@@ -14,29 +14,25 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: [
-    [
-      "@nuxtjs/tailwindcss",
-      {
-        config: {
-          theme: {
-            fontFamily: {
-              Play: ["Play", "cursive"],
-            },
+  modules: [[
+    "@nuxtjs/tailwindcss",
+    {
+      config: {
+        theme: {
+          fontFamily: {
+            Play: ["Play", "cursive"],
           },
         },
       },
-    ],
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          Play: [400, 500, 600, 700],
-        },
+    },
+  ], [
+    "@nuxtjs/google-fonts",
+    {
+      families: {
+        Play: [400, 500, 600, 700],
       },
-    ],
-    "@primevue/nuxt-module",
-  ],
+    },
+  ], "@primevue/nuxt-module", "@nuxt/image"],
   primevue: {
     usePrimeVue: true,
     importTheme: { from: '@/myTheme.ts' },

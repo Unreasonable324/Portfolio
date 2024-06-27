@@ -1,25 +1,39 @@
 <script setup lang="ts">
 import { useStackQuery } from './useStackQuery';
 
-const page = ref(0);
-
-
-
-
-const { data, suspense,isLoading } = await useStackQuery(page)
+const { data, suspense, isLoading } = await useStackQuery();
 
 await suspense();
-const handler = (item: any) => {
-  page.value = item - 1;
-};
+
+enum category {
+  Design = "Design",
+  Other = "Other",
+  Database = "Database",
+  Framework = "Framework",
+  Platform = "Platform",
+  Language = "Language",
+  Library = "Library",
+}
+
+const sorting = (items: any) =>
+  items.reduce((acc: any, curr: any) => {
+    acc[curr.category] = [...(acc[curr.category] || []), curr];
+    return acc;
+  }, {});
 </script>
 <template>
-  {{ page }}{{ isLoading }}
-  <div class="bg-red-500">
-    <pre>{{ data }}</pre>
-  </div>
-  <div class="flex gap-2">
-    <button v-for="item in data?.total" class="p-3 bg-red-300" @click="handler(item)">{{ item }}</button>
+  <div class="flex flex-col gap-3">
+    <div class="text-6xl text-gradient">Stack</div>
+    <div class="flex flex-col gap-3" v-if="!isLoading">
+      <div class="flex flex-col gap-3" v-for="(value, key) in sorting(data?.documents)">
+        <div class="text-2xl">{{ key }}</div>
+        <div class="flex  gap-3">
+          <div class="rounded-md overflow-hidden" v-for="item in value.sort((a, b) => a.length - b.length)">
+            <img :src="item.icon" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <style></style>

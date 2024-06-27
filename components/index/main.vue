@@ -2,15 +2,15 @@
 console.log(baseUrl);
 </script>
 <template>
-  <div class="grid grid-cols-2 my-10 gap-[100px]">
+  <div class="grid grid-cols-[auto_1fr]  gap-[100px] items-center">
     <div class="flex flex-col gap-6">
       <h2 class="text-6xl text-gradient">
         Привет!<br />
         меня зовут Андрей
       </h2>
-      <p class="tracking-wide text-gradient text-xl">
+      <p class="tracking-wide text-gradient text-balance text-xl">
         Я Frontend разработчик с более чем 3-летним опытом в разработке веб-приложений на Vue.js, я готов помочь вам создавать современные и
-        интуитивно понятные пользовательские интерфейсы. Моя компетенция включает в себя разработку клиентской стороны с использованием фреймворка
+        интуитивно понятные пользовательские интерфейсы. Моя компетенция включает в себя разработку клиентской части приложения с использованием фреймворка
         Vue.js
       </p>
       <div class="">
@@ -26,7 +26,7 @@ console.log(baseUrl);
         </a>
       </div>
     </div>
-    <div class="">
+    <div class="max-h-[500px] ">
       <SvgMainSectionAnimation />
     </div>
   </div>
