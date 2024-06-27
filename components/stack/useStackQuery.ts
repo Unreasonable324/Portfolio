@@ -8,3 +8,4 @@ export async function useStackQuery(page: any) {
     queryFn: async () => DB.listDocuments(DB_ID, COLLECTION_STACK_ID, [Query.limit(1), Query.offset(page.value)]),
   });
 }
+

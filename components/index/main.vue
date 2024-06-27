@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+console.log(baseUrl);
+</script>
 <template>
   <div class="grid grid-cols-2 my-10 gap-[100px]">
     <div class="flex flex-col gap-6">
@@ -12,7 +14,16 @@
         Vue.js
       </p>
       <div class="">
-        <PrimeButton label="Check" icon="pi pi-check" />
+        <a :href="cvLink" target="_blank">
+          <PrimeButton>
+            <div
+              class="bg-[linear-gradient(135deg,rgba(255,255,255,0.5)_20%,#ffffff_130%)] h-full w-[28px] rounded-full flex items-center justify-center"
+            >
+              <div class="text-gradient">hh</div>
+            </div>
+            <div class="">Резюме</div>
+          </PrimeButton>
+        </a>
       </div>
     </div>
     <div class="">
