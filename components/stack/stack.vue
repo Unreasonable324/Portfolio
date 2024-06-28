@@ -14,21 +14,22 @@ enum category {
   Language = "Language",
   Library = "Library",
 }
-
-const sorting = (items: any) =>
+const sortingCategory = (items: any) =>
   items.reduce((acc: any, curr: any) => {
     acc[curr.category] = [...(acc[curr.category] || []), curr];
     return acc;
   }, {});
+
+const sortLight = (items: any) => items.sort((a: any, b: any) => b.name.length - a.name.length);
 </script>
 <template>
   <div class="flex flex-col gap-3">
     <div class="text-6xl text-gradient">Stack</div>
     <div class="flex flex-col gap-3" v-if="!isLoading">
-      <div class="flex flex-col gap-3" v-for="(value, key) in sorting(data?.documents)">
-        <div class="text-2xl">{{ key }}</div>
+      <div class="flex flex-col gap-2" v-for="(value, key) in sortingCategory(data?.documents)">
+        <div class="text-3xl text-gradient">{{ key }}</div>
         <div class="flex  gap-3">
-          <div class="rounded-md overflow-hidden" v-for="item in value">
+          <div class="rounded-md overflow-hidden" v-for="item in sortLight(value)">
             <img :src="item.icon" alt="" />
           </div>
         </div>

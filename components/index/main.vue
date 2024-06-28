@@ -1,5 +1,4 @@
 <script setup lang="ts">
-console.log(baseUrl);
 </script>
 <template>
   <div class="grid grid-cols-[auto_1fr]  gap-[100px] items-center">
