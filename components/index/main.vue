@@ -1,7 +1,7 @@
 <script setup lang="ts">
 </script>
 <template>
-  <div class="grid grid-cols-[auto_1fr]  gap-[100px] items-center">
+  <div class="grid grid-cols-[1fr] xl:grid-cols-[auto_1fr]  gap-[100px] items-center">
     <div class="flex flex-col gap-6 h-full">
       <h2 class="text-6xl text-gradient">
         Привет!<br />
@@ -25,7 +25,7 @@
         </a>
       </div>
     </div>
-    <div class="max-h-[500px] ">
+    <div class="max-h-[500px] hidden xl:block">
       <SvgMainSectionAnimation />
     </div>
   </div>

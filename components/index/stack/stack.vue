@@ -28,7 +28,7 @@ const sortLight = (items: any) => items.sort((a: any, b: any) => b.name.length -
     <div class="flex flex-col gap-3" v-if="!isLoading">
       <div class="flex flex-col gap-2" v-for="(value, key) in sortingCategory(data?.documents)">
         <div class="text-3xl text-gradient">{{ key }}</div>
-        <div class="flex  gap-3">
+        <div class="flex flex-wrap gap-3">
           <div class="rounded-md overflow-hidden" v-for="item in sortLight(value)">
             <img :src="item.icon" alt="" />
           </div>
