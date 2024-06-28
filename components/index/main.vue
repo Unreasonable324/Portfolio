@@ -2,17 +2,17 @@
 </script>
 <template>
   <div class="grid grid-cols-[auto_1fr]  gap-[100px] items-center">
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-6 h-full">
       <h2 class="text-6xl text-gradient">
         Привет!<br />
         меня зовут Андрей
       </h2>
-      <p class="tracking-wide text-gradient text-balance text-xl">
+      <p class="tracking-wide text-gradient text-balance text-2xl">
         Я Frontend разработчик с более чем 3-летним опытом в разработке веб-приложений на Vue.js, я готов помочь вам создавать современные и
         интуитивно понятные пользовательские интерфейсы. Моя компетенция включает в себя разработку клиентской части приложения с использованием фреймворка
         Vue.js
       </p>
-      <div class="">
+      <div class="mt-auto">
         <a :href="cvLink" target="_blank">
           <PrimeButton>
             <div
