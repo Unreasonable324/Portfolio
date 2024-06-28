@@ -2,7 +2,7 @@ export const tailwindConfig = {
   config: {
     theme: {
       fontFamily: {
-        Play: ["Play", "cursive"],
+        Play: ["Play", "sans-serif"],
       },
       screens: {
         "3xl": "1600px",
