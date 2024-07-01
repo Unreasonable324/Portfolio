@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
-  css: ["primeicons/primeicons.css"],
+  css: ["primeicons/primeicons.css", "~/assets/index.css"],
   devtools: {
     enabled: true,
     timeline: {

@@ -1,24 +1,24 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <template>
-  <div class="grid grid-cols-[1fr] xl:grid-cols-[auto_1fr]  gap-[100px] items-center">
+  <div class="grid grid-cols-[1fr] xl:grid-cols-[auto_1fr] gap-[100px] items-center">
     <div class="flex flex-col gap-6 h-full">
-      <h2 class="text-6xl text-gradient">
+      <UiTitle>
         Привет!<br />
-        меня зовут Андрей
-      </h2>
-      <p class="tracking-wide text-gradient text-balance text-2xl">
+        меня зовут Андрей</UiTitle
+      >
+      <UiSubtitle>
         Я Frontend разработчик с более чем 3-летним опытом в разработке веб-приложений на Vue.js, я готов помочь вам создавать современные и
-        интуитивно понятные пользовательские интерфейсы. Моя компетенция включает в себя разработку клиентской части приложения с использованием фреймворка
-        Vue.js
-      </p>
+        интуитивно понятные пользовательские интерфейсы. Моя компетенция включает в себя разработку клиентской части приложения с использованием
+        фреймворка Vue.js
+      </UiSubtitle>
+
       <div class="mt-auto">
         <a :href="cvLink" target="_blank">
           <PrimeButton>
             <div
               class="bg-[linear-gradient(135deg,rgba(255,255,255,0.5)_20%,#ffffff_130%)] h-full w-[28px] rounded-full flex items-center justify-center"
             >
-              <div class="text-gradient">hh</div>
+            <UiTitle size="small">hh</UiTitle>
             </div>
             <div class="">Резюме</div>
           </PrimeButton>
@@ -30,11 +30,4 @@
     </div>
   </div>
 </template>
-<style>
-.text-gradient {
-  font-weight: 800;
-  background: linear-gradient(135deg, #ffffff 20%, rgba(255, 255, 255, 0.8) 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-</style>
+<style></style>
