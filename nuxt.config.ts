@@ -13,6 +13,15 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: [["@nuxtjs/tailwindcss", tailwindConfig], ["@nuxtjs/google-fonts", googleFontsConfig], "@primevue/nuxt-module", "@nuxt/image"],
+  modules: [
+    ["@nuxtjs/tailwindcss", tailwindConfig],
+    ["@nuxtjs/google-fonts", googleFontsConfig],
+    "@primevue/nuxt-module",
+    "@nuxt/image",
+    "@pinia/nuxt",
+  ],
+  pinia: {
+    storesDirs: ["./stores/**"],
+  },
   primevue: primevueConfig as ModuleOptions,
 });

@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useAuth } from '~/stores/auth.store';
 import { links, nav } from './config';
+
+const auth = useAuth();
 </script>
 <template>
   <div class="flex w-full gap-12 items-center py-3 justify-between">
@@ -21,6 +24,7 @@ import { links, nav } from './config';
         </a>
       </div>
     </div>
+    <PrimeButton icon="pi pi-user" label="Admin" size="small" @click="$router.push('/admin')" class="absolute z-[1102]" v-if="auth.isAuth" />
     <div class="sm:hidden">
       <LayoutBurgerButton />
     </div>

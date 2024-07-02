@@ -12,10 +12,12 @@
   "dependencies": {
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@pinia/nuxt": "^0.5.1",
     "@primevue/themes": "^4.0.0-rc.2",
     "@tanstack/vue-query": "^5.45.0",
     "appwrite": "^15.0.0",
     "nuxt": "^3.12.2",
+    "pinia": "^2.1.7",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.0-rc.2",
     "vue": "^3.4.29",
