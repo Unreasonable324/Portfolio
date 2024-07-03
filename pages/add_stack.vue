@@ -5,30 +5,31 @@ import { useQueryClient } from '@tanstack/vue-query';
 
 const queryClient = useQueryClient();
 const DTO = ref({
-  name: "NUXT.JS",
-  icon: "https://img.shields.io/badge/Nuxt-35495E?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82",
-  category: "Framework",
+  name: "",
+  icon: "",
+  category: "",
 });
 const categoriesStack = ["Design", "Other", "Database", "Framework", "Platform", "Language", "Library"];
 const addStack = async () => {
   const id = ID.unique();
   await DB.createDocument(DB_ID, COLLECTION_STACK_ID, id, { ...DTO.value, id });
-  queryClient.invalidateQueries({ queryKey: ['stack'] })
+  queryClient.invalidateQueries({ queryKey: ["stack"] });
 };
 </script>
 <template>
-  <div class="grid grid-cols-2">
-    <div class="flex justify-center mt-[200px]">
-      <div class="flex flex-col gap-3 w-1/2">
+  <div class="">
+    <div class="sticky top-1/2 -translate-y-1/2 z-10 p-5 left-0 w-1/2 -mt-[300px]">
+      <div class="flex flex-col gap-3 px-10">
         <PrimeInputText label="name" placeholder="name" v-model="DTO.name" />
         <PrimeInputText label="icon" placeholder="icon" v-model="DTO.icon" />
         <PrimeSelect :options="categoriesStack" label="category" placeholder="category" v-model="DTO.category" />
         <PrimeButton label="Add stack" @click="addStack"></PrimeButton>
-
         <div class="rounded-md overflow-hidden flex w-fit self-center"><img :src="DTO.icon" alt="" class="" /></div>
       </div>
     </div>
-    <div class=""><IndexStack /></div>
+    <div class="w-full flex justify-end my-10">
+      <div class="mr-0 w-1/2"><IndexStack /></div>
+    </div>
   </div>
 </template>
 <style></style>

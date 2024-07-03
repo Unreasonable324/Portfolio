@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { useAuth } from '~/stores/auth.store';
 
-const auth = useAuth();
-onMounted(() => {
-  auth.get_me();
-})
 const router = useRouter();
+const auth = useAuth();
+
 </script>
 <template>
-  <div class="">
-    <div class="flex justify-end gap-4">
-      <NuxtLink to="/add_stack"><PrimeButton label="Add stack" icon="pi pi-plus"  size="small"/></NuxtLink>
-      <NuxtLink to="/add_project"><PrimeButton label="Add project" icon="pi pi-plus"  size="small"/></NuxtLink>
+  <div class="" v-if="auth.isAuth">
+    <div class="flex justify-end gap-4" >
+      <NuxtLink to="/add_stack"><PrimeButton label="Add stack" icon="pi pi-plus" size="small" /></NuxtLink>
+      <NuxtLink to="/add_project"><PrimeButton label="Add project" icon="pi pi-plus" size="small" /></NuxtLink>
       <PrimeButton label="Exit" icon="pi pi-sign-out" @click="auth.logout(router)" size="small" />
     </div>
+   <div class="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias error, nemo quos laborum illo exercitationem natus, adipisci animi, vitae praesentium soluta modi laboriosam eligendi similique molestiae inventore! Ducimus, voluptates culpa!</div>
   </div>
+  <div class="h-[calc(100vh-114px)]" v-else>
+      <LayoutLoader class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+    </div>
 </template>
 <style></style>

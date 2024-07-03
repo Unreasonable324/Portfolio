@@ -4,7 +4,6 @@ import { useStackQuery } from './useStackQuery';
 const { data, suspense, isLoading } = await useStackQuery();
 
 await suspense();
-
 enum category {
   Design = "Design",
   Other = "Other",

@@ -3,6 +3,7 @@ import { useAuth } from '~/stores/auth.store';
 import { links, nav } from './config';
 
 const auth = useAuth();
+const router  = useRouter();
 </script>
 <template>
   <div class="flex w-full gap-12 items-center py-3 justify-between">
@@ -24,7 +25,7 @@ const auth = useAuth();
         </a>
       </div>
     </div>
-    <PrimeButton icon="pi pi-user" label="Admin" size="small" @click="$router.push('/admin')" class="absolute z-[1102]" v-if="auth.isAuth" />
+    <PrimeButton icon="pi pi-user" label="Admin" size="small" @click="router.push('/admin')" class="absolute z-[1102]" v-if="auth.isAuth" />
     <div class="sm:hidden">
       <LayoutBurgerButton />
     </div>

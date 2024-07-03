@@ -12,6 +12,7 @@ const sizes = {
   large: "text-6xl",
   medium: "text-3xl",
   small: "text-lg",
+  ultra_small: "text-sm",
 };
 </script>
 <template>

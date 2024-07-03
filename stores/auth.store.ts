@@ -17,7 +17,7 @@ export const useAuth = defineStore("auth", () => {
     };
     router.push({ path: "/admin" });
   };
-  const get_me = async () => {
+  const get_me = async (router: Router) => {
     try {
       const response = await account.get();
       const { email, $id } = response;
@@ -25,8 +25,9 @@ export const useAuth = defineStore("auth", () => {
         id: $id,
         email,
       };
+      router.currentRoute.value.name === "login" && router.push({ path: "/admin" });
     } catch (err) {
-      console.log(err);
+      router.push({ path: "/login" });
     }
   };
   const logout = async (router: Router) => {

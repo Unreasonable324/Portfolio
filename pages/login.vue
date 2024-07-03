@@ -3,9 +3,7 @@ import { useAuth } from '~/stores/auth.store';
 
 const auth = useAuth();
 const router = useRouter();
-onMounted(() => {
-  auth.get_me();
-});
+
 const DTO = ref({
   email: "a8surd324@yandex.ru",
   password: "aA9379992",
