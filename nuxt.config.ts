@@ -17,10 +17,7 @@ export default defineNuxtConfig({
     ["@nuxtjs/tailwindcss", tailwindConfig],
     ["@nuxtjs/google-fonts", googleFontsConfig],
     "@primevue/nuxt-module",
-    
-      "@nuxt/image"
-    
-    ,
+    "@nuxt/image",
     "@pinia/nuxt",
   ],
   pinia: {

@@ -8,9 +8,7 @@ defineProps({
 </script>
 <template>
   <div class="border-slate-700 rounded-lg border flex flex-col  min-w-[320px] items-stretch">
-  <!-- <div class="w-10 h-10" v-for="img in item.images">
-  <img :src="img" alt="">
-  </div> -->
+
     <PrimeGalleria
       :value="item.images"
       :numVisible="5"
