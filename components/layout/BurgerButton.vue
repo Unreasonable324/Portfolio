@@ -14,9 +14,9 @@ watch(isVisible, () => {
   <div class="">
     <PrimeButton icon="pi pi-bars" size="small" @click="isVisible = !isVisible" class="absolute z-[1102]"/>
 
-    <PrimeDrawer v-model:visible="isVisible" header="Drawer" position="full" :pt="{ root: 'border-none pt-[72px] bg-[transparent]' }" >
+    <PrimeDrawer v-model:visible="isVisible" header="Drawer" position="full" :pt="{ root: 'border-none  bg-[transparent]' }" >
       <template #container="{ closeCallback }">
-        <div class="bg-[#0F1624]  flex flex-col px-5 py-4" style="height:calc(100dvh - 72px)">
+        <div class="bg-[#0F1624]  flex flex-col px-5 py-4" style="height:calc(100dvh )">
           <!-- <PrimeButton icon="pi pi-bars" size="small" @click="isVisible = !isVisible" class="self-end h-[40px]" /> -->
           <div class=" flex flex-col justify-center h-full gap-10 items-center">
               <!-- <div class="text-3xl text-white" v-for="item in nav" :key="item.label">
