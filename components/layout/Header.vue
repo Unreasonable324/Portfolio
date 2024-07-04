@@ -3,10 +3,10 @@ import { useAuth } from '~/stores/auth.store';
 import { links, nav } from './config';
 
 const auth = useAuth();
-const router  = useRouter();
+const router = useRouter();
 </script>
 <template>
-  <div class="    py-3  fixed bg-[#0F1624] top-0 left-0 right-0 z-[1102]">
+  <div class="py-3 fixed bg-[#0F1624] top-0 left-0 right-0 z-[1102]">
     <div class="mx-auto max-w-[1280px] px-5 flex justify-between items-center w-full gap-12">
       <NuxtLink to="/">
         <div class="flex items-center gap-1 text-xl">
@@ -16,7 +16,8 @@ const router  = useRouter();
       </NuxtLink>
       <div class="justify-evenly flex-1 hidden sm:flex">
         <div class="" v-for="item in nav" :key="item.label">
-          {{ item.label }}
+          <!-- <NuxtLink :to="{ path: item.to, hash: item.hash }" :external="true"> {{ item.label }}</NuxtLink> -->
+          <a :href="item.hash">{{ item.label }}</a>
         </div>
       </div>
       <div class="justify-between gap-3 hidden sm:flex">

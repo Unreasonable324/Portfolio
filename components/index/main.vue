@@ -18,7 +18,7 @@
             <div
               class="bg-[linear-gradient(135deg,rgba(255,255,255,0.5)_20%,#ffffff_130%)] h-full w-[28px] rounded-full flex items-center justify-center"
             >
-            <UiTitle size="small">hh</UiTitle>
+              <UiTitle size="small">hh</UiTitle>
             </div>
             <div class="">Резюме</div>
           </PrimeButton>

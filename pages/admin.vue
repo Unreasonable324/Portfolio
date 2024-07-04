@@ -5,7 +5,7 @@ const router = useRouter();
 const auth = useAuth();
 </script>
 <template>
-  <div class="" v-if="auth.isAuth">
+  <div class="my-5" v-if="auth.isAuth">
     <div class="flex justify-end gap-4">
       <NuxtLink to="/add_stack"><PrimeButton label="Add stack" icon="pi pi-plus" size="small" /></NuxtLink>
       <NuxtLink to="/add_project"><PrimeButton label="Add project" icon="pi pi-plus" size="small" /></NuxtLink>

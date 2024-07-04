@@ -20,6 +20,8 @@ const addStack = async () => {
   <div class="">
     <div class="sticky top-1/2 -translate-y-1/2 z-10 p-5 left-0 w-1/2 -mt-[300px]">
       <div class="flex flex-col gap-3 px-10">
+        <UiTitle  class="font-semibold">Add stack</UiTitle>
+
         <PrimeInputText label="name" placeholder="name" v-model="DTO.name" />
         <PrimeInputText label="icon" placeholder="icon" v-model="DTO.icon" />
         <PrimeSelect :options="categoriesStack" label="category" placeholder="category" v-model="DTO.category" />

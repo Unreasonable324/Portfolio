@@ -1,11 +1,11 @@
 <script setup lang="ts"></script>
 <template>
 <div class="flex flex-col gap-5 my-5">
-  <IndexMain/>
+  <IndexMain id="about"/>
   <DecorSeparator/>
-  <Stack/>
+  <Stack id="stack"/>
   <DecorSeparator/>
-  <Projects/>
+  <Projects id="projects"/>
   <DecorSeparator/>
   <Statistic/>
 </div>

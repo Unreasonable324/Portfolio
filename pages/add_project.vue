@@ -41,6 +41,8 @@ const isEmpty = computed(() => [Object.values(DTO.value).every((e) => !e.length)
 <template>
   <div class="grid grid-cols-2 gap-3 items-center h-[calc(100vh-100px)]">
     <div class="flex flex-col gap-3">
+      <UiTitle  class="font-semibold">Add project</UiTitle>
+
       <PrimeInputText placeholder="name" v-model="DTO.name" />
       <PrimeTextarea placeholder="description" v-model="DTO.description" rows="8" :resize="false" />
       <PrimeMultiSelect

@@ -19,9 +19,13 @@ watch(isVisible, () => {
         <div class="bg-[#0F1624]  flex flex-col px-5 py-4" style="height:calc(100dvh - 72px)">
           <!-- <PrimeButton icon="pi pi-bars" size="small" @click="isVisible = !isVisible" class="self-end h-[40px]" /> -->
           <div class=" flex flex-col justify-center h-full gap-10 items-center">
-              <div class="text-3xl text-white" v-for="item in nav" :key="item.label">
+              <!-- <div class="text-3xl text-white" v-for="item in nav" :key="item.label">
                 {{ item.label }}
-              </div>
+              </div> -->
+              <div class="text-3xl text-white" v-for="item in nav" :key="item.label">
+          <!-- <NuxtLink :to="{ path: item.to, hash: item.hash }" :external="true" @click="closeCallback"> {{ item.label }}</NuxtLink> -->
+          <a :href="item.hash"  @click="closeCallback">{{ item.label }}</a>
+        </div>
             <div class="flex gap-3">
               <div class="" v-for="item in links" :key="item.icon">
                 <a :href="item.url" target="_blank">
