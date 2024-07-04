@@ -15,7 +15,7 @@ defineProps({
       :showThumbnails="false"
       :showIndicators="true"
       showIndicatorsOnItem
-      :pt="{ root: 'border-none' }"
+      :pt="{ root: '!border-none border-[#0F1624]' }"
     >
       <template #item="slotProps">
         <PrimeImage alt="Image" :src="slotProps.item" preview class="h-[300px]">
