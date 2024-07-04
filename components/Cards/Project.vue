@@ -8,6 +8,9 @@ defineProps({
 </script>
 <template>
   <div class="border-slate-700 rounded-lg border flex flex-col  min-w-[320px] items-stretch">
+  <div class="w-10 h-10" v-for="img in item.images">
+  <img :src="img" alt="">
+  </div>
     <PrimeGalleria
       :value="item.images"
       :numVisible="5"
@@ -20,7 +23,6 @@ defineProps({
         <PrimeImage alt="Image" :src="slotProps.item" preview class="h-[300px]">
           <template #image>
           <NuxtImg  alt="Image" :src="slotProps.item"  loading="lazy" class="w-[100%] object-scale-down" style="width: 100%; display: block"></NuxtImg >
-            <!-- <img :src="slotProps.item" alt="image" class="w-[100%] object-scale-down" style="width: 100%; display: block" /> -->
           </template>
         </PrimeImage>
       </template>
