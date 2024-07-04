@@ -6,7 +6,7 @@ const auth = useAuth();
 const router  = useRouter();
 </script>
 <template>
-  <div class="    py-3  fixed bg-[#0F1624] top-0 left-0 right-0">
+  <div class="    py-3  fixed bg-[#0F1624] top-0 left-0 right-0 z-[1102]">
     <div class="mx-auto max-w-[1280px] px-5 flex justify-between items-center w-full gap-12">
       <NuxtLink to="/">
         <div class="flex items-center gap-1 text-xl">

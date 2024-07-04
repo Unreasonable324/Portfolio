@@ -19,12 +19,13 @@ defineProps({
       <template #item="slotProps">
         <PrimeImage alt="Image" :src="slotProps.item" preview class="h-[300px]">
           <template #image>
-            <img :src="slotProps.item" alt="image" class="w-[100%] object-scale-down" style="width: 100%; display: block" />
+          <NuxtImg  alt="Image" :src="slotProps.item"  loading="lazy" class="w-[100%] object-scale-down" style="width: 100%; display: block"></NuxtImg >
+            <!-- <img :src="slotProps.item" alt="image" class="w-[100%] object-scale-down" style="width: 100%; display: block" /> -->
           </template>
         </PrimeImage>
       </template>
     </PrimeGalleria>
-    <div class="p-4 flex flex-col gap-3">
+    <div class="p-4 flex flex-col gap-3 flex-1">
       <UiTitle size="medium">{{ item.name }}</UiTitle>
       <UiSubtitle size="base">{{ item.description }}</UiSubtitle>
 
@@ -35,7 +36,7 @@ defineProps({
           <img :src="i" alt="" />
         </div>
       </div>
-      <div class="rounded-md overflow-hidden w-fit self-end">
+      <div class="rounded-md overflow-hidden w-fit self-end mt-auto">
         <img :src="item.time_spent" alt="" class="w-[100%] object-cover" />
       </div>
     </div>

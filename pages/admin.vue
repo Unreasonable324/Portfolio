@@ -12,7 +12,7 @@ const auth = useAuth();
       <PrimeButton label="Exit" icon="pi pi-sign-out" @click="auth.logout(router)" size="small" />
     </div>
     <div class="">
-      <projects/>
+      <Projects/>
     </div>
   </div>
   <div class="h-[calc(100vh-114px)]" v-else>

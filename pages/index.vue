@@ -5,7 +5,9 @@
   <DecorSeparator/>
   <Stack/>
   <DecorSeparator/>
-  <projects/>
+  <Projects/>
+  <DecorSeparator/>
+  <Statistic/>
 </div>
 </template>
 <style></style>
