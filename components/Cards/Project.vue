@@ -22,7 +22,7 @@ defineProps({
       <template #item="slotProps">
         <PrimeImage alt="Image" :src="slotProps.item" preview class="h-[300px]">
           <template #image>
-          <NuxtImg  alt="Image" :src="slotProps.item" provider="ipx"class="w-[100%] object-scale-down" style="width: 100%; display: block"></NuxtImg >
+          <NuxtImg  alt="Image" :src="slotProps.item" class="w-[100%] object-scale-down" style="width: 100%; display: block"></NuxtImg >
           </template>
         </PrimeImage>
       </template>
