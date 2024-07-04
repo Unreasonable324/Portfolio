@@ -1,25 +1,48 @@
 <script setup lang="ts">
-import { useStackQuery } from '~/components/index/stack/useStackQuery';
+import { ID, type Models } from 'appwrite';
+import {
+  COLLECTION_PROJECTS_ID,
+  DB_ID,
+  STORAGE_IMAGES_ID,
+} from '~/app.constants';
+import { useStackQuery } from '~/components/stack/useStackQuery';
+import type { iProject, iStack } from '~/types';
+import { createImageUrl } from '~/utils/appwrite';
 
+const File = ref<InstanceType<any> | null>(null);
 const { data, suspense, isLoading } = await useStackQuery();
 await suspense();
 
-const DTO = ref({
-  name: "name",
-  description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi deleniti labore, rem optio voluptatem porro. Possimus ad a repellendus officia fuga laudantium rerum ea, eum incidunt praesentium aut repellat iste!
-Sunt distinctio soluta perspiciatis, quis accusantium iure laboriosam unde architecto ipsa saepe consequatur optio praesentium et placeat rem facilis exercitationem at, eos rerum a dolore aspernatur nemo, quia maiores. Beatae?
-Voluptatum corrupti eaque itaque exercitationem maxime laudantium dignissimos assumenda distinctio laboriosam quod necessitatibus non ipsam consequuntur voluptatibus, maiores, ea adipisci voluptatem, rem unde cumque suscipit qui autem? Obcaecati, voluptatum vero.`,
-  stack: [{"id":"1","category":"Language","icon":"https://img.shields.io/badge/HTML-35495E?style=for-the-badge&logo=html5","name":"HTML","$id":"6673c4aa000cf2539614","$tenant":"156044","$createdAt":"2024-06-20T05:55:15.463+00:00","$updatedAt":"2024-06-28T04:10:46.637+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"2","category":"Language","icon":"https://img.shields.io/badge/CSS-35495E?style=for-the-badge&logo=css3&logoColor=blue","name":"CSS","$id":"6673c4d70000f67993c1","$tenant":"156044","$createdAt":"2024-06-20T05:56:00.251+00:00","$updatedAt":"2024-06-28T04:10:35.161+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"3","category":"Language","icon":"https://img.shields.io/badge/Java_Script-35495E?style=for-the-badge&logo=javascript","name":"Java_Script","$id":"6673c4f10033e450a05f","$tenant":"156044","$createdAt":"2024-06-20T05:56:27.115+00:00","$updatedAt":"2024-06-28T04:10:12.423+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"4","category":"Language","icon":"https://img.shields.io/badge/Type_Script-35495E?style=for-the-badge&logo=typescript","name":"Type_Script","$id":"667d4b350039d152fd10","$tenant":"156044","$createdAt":"2024-06-27T11:19:43.011+00:00","$updatedAt":"2024-06-28T04:10:01.587+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"5","category":"Library","icon":"https://img.shields.io/badge/Chart.js-35495E?style=for-the-badge&logo=Chart.js","name":"Chart.js","$id":"667d4b600011bd5e7495","$tenant":"156044","$createdAt":"2024-06-27T11:20:25.251+00:00","$updatedAt":"2024-06-28T04:09:49.610+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"6","category":"Library","icon":"https://img.shields.io/badge/APEXCHARTS.JS-35495E?style=for-the-badge&logo=APEXCHARTS.JS","name":"APEXCHARTS.JS","$id":"667d4c6c0028c9c50508","$tenant":"156044","$createdAt":"2024-06-27T11:24:53.767+00:00","$updatedAt":"2024-06-28T04:09:37.862+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"6","category":"Framework","icon":"https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs","name":"Vue.js","$id":"667d4c8600115601a329","$tenant":"156044","$createdAt":"2024-06-27T11:25:19.341+00:00","$updatedAt":"2024-06-28T04:09:20.988+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"7","category":"Library","icon":"https://img.shields.io/badge/Vuex-35495E?style=for-the-badge&logo=vuedotjs","name":"Vuex","$id":"667d4cba0035ce7bc852","$tenant":"156044","$createdAt":"2024-06-27T11:26:11.987+00:00","$updatedAt":"2024-06-28T04:09:10.860+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"8","category":"Platform","icon":"https://img.shields.io/badge/Node.js-35495E?style=for-the-badge&logo=Nodedotjs","name":"Node.js","$id":"667d4dc20015565be158","$tenant":"156044","$createdAt":"2024-06-27T11:30:35.668+00:00","$updatedAt":"2024-06-28T04:08:59.939+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"9","category":"Library","icon":"https://img.shields.io/badge/Pinia-35495E?style=for-the-badge","name":"Pinia","$id":"667d4de40028d21c943a","$tenant":"156044","$createdAt":"2024-06-27T11:31:09.656+00:00","$updatedAt":"2024-06-28T04:08:46.939+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"10","category":"Library","icon":"https://img.shields.io/badge/TanStack_Query-35495E?style=for-the-badge&logo=vuedotjs&logoColor=red","name":"TanStack_Query","$id":"667d4e31002f48e7f0c4","$tenant":"156044","$createdAt":"2024-06-27T11:32:26.745+00:00","$updatedAt":"2024-06-28T04:08:26.359+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"11","category":"Library","icon":"https://img.shields.io/badge/tailwindcss-35495E.svg?style=for-the-badge&logo=tailwind-css&logoColor=blue","name":"TailwindCSS","$id":"667d4e490006db54bf8f","$tenant":"156044","$createdAt":"2024-06-27T11:32:50.141+00:00","$updatedAt":"2024-06-28T04:08:07.421+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"12","category":"Other","icon":"https://img.shields.io/badge/vite-35495E?style=for-the-badge&logo=vite","name":"Vite","$id":"667d4eba001dd9ad114e","$tenant":"156044","$createdAt":"2024-06-27T11:34:43.496+00:00","$updatedAt":"2024-06-28T04:07:39.921+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"13","category":"Design","icon":"https://img.shields.io/badge/Figma-35495E?style=for-the-badge&logo=figma","name":"Figma","$id":"667d4ee20018d6f3866f","$tenant":"156044","$createdAt":"2024-06-27T11:35:23.373+00:00","$updatedAt":"2024-06-28T04:07:13.307+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"14","category":"Library","icon":"https://img.shields.io/badge/Axios-35495E?style=for-the-badge&logo=Axios","name":"Axios","$id":"667d4ef400385ac0b460","$tenant":"156044","$createdAt":"2024-06-27T11:35:41.896+00:00","$updatedAt":"2024-06-28T04:07:00.495+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"15","category":"Other","icon":"https://img.shields.io/badge/-Swagger-35495E?style=for-the-badge&logo=swagger&logoColor=green","name":"Swagger","$id":"667d4f0e00105cc91e48","$tenant":"156044","$createdAt":"2024-06-27T11:36:07.354+00:00","$updatedAt":"2024-06-28T04:06:50.317+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"16","category":"Other","icon":"https://img.shields.io/badge/Bruno-35495E?style=for-the-badge","name":"Bruno","$id":"667d4f390027d4809db2","$tenant":"156044","$createdAt":"2024-06-27T11:36:50.612+00:00","$updatedAt":"2024-06-28T04:06:39.042+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"17","category":"Other","icon":"https://img.shields.io/badge/JWT-35495E?style=for-the-badge&logo=JSON%20web%20tokens","name":"JWT","$id":"667d4f9800024fe1931f","$tenant":"156044","$createdAt":"2024-06-27T11:38:25.102+00:00","$updatedAt":"2024-06-28T04:06:27.824+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"18","category":"Other","icon":"https://img.shields.io/badge/npm-35495E?style=for-the-badge&logo=npm","name":"npm","$id":"667d4fc1003b49811812","$tenant":"156044","$createdAt":"2024-06-27T11:39:07.051+00:00","$updatedAt":"2024-06-28T04:06:17.563+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"19","category":"Database","icon":"https://img.shields.io/badge/PostgreSQL-35495E.svg?style=for-the-badge&logo=postgresql&logoColor=23316192","name":"PostgreSQL","$id":"667d4fd8000fcaf38d88","$tenant":"156044","$createdAt":"2024-06-27T11:39:29.240+00:00","$updatedAt":"2024-06-28T04:05:58.567+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"20","category":"Database","icon":"https://img.shields.io/badge/sqlite-35495E.svg?style=for-the-badge&logo=sqlite&logoColor=white","name":"SQLite","$id":"667d4fe700154d5648ee","$tenant":"156044","$createdAt":"2024-06-27T11:39:44.385+00:00","$updatedAt":"2024-06-28T04:05:13.231+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"21","category":"Other","icon":"https://img.shields.io/badge/Postman-35495E?style=for-the-badge&logo=postman&logoColor=FF6C37","name":"Postman","$id":"667d4ffd001b602a892e","$tenant":"156044","$createdAt":"2024-06-27T11:40:06.514+00:00","$updatedAt":"2024-06-28T04:04:34.874+00:00","$permissions":[],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"},{"id":"6684f076003906466e08","category":"Framework","icon":"https://img.shields.io/badge/Nuxt-35495E?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82","name":"NUXT.JS","$id":"6684f076003906466e08","$tenant":"156044","$createdAt":"2024-07-03T06:30:39.178+00:00","$updatedAt":"2024-07-03T06:30:39.178+00:00","$permissions":["read(\"user:668245d5001844fefe9b\")","update(\"user:668245d5001844fefe9b\")","delete(\"user:668245d5001844fefe9b\")"],"$databaseId":"6673b630000fa1cfea15","$collectionId":"6673b64d0031a5d52626"}],
-  time_spent: "https://wakatime.com/badge/user/82b4e55b-b819-435e-9beb-0ebadd36dc23/project/592314e8-0e4a-4132-b769-69bd854809de.svg?style=flat-square",
-  image: [],
+const DTO = ref<iProject>({
+  name: "",
+  description: "",
+  stack: [],
+  time_spent: "",
+  images: [],
+  create_date: "",
 });
-const images = ref([]);
+const images = ref<any[]>([]);
+const stack = ref<iStack[]>([]);
+
+const router = useRouter();
+const addProject = async () => {
+  const promises = images.value.map((e) => storage.createFile(STORAGE_IMAGES_ID, ID.unique(), e));
+  const resp = (await Promise.allSettled(promises)) as PromiseFulfilledResult<Models.File>[];
+  const urls = resp.map((e: PromiseFulfilledResult<Models.File>) => createImageUrl(e.value.$id));
+  DTO.value.images = urls;
+  DTO.value.stack = stack.value.map((e) => e.icon);
+  DTO.value.create_date = new Date().toISOString();
+  const id = ID.unique();
+  await DB.createDocument(DB_ID, COLLECTION_PROJECTS_ID, id, DTO.value);
+  router.push("/admin");
+};
+const isEmpty = computed(() => [Object.values(DTO.value).every((e) => !e.length), !images.value.length, !stack.value.length].every((e) => e));
 </script>
 <template>
   <div class="grid grid-cols-2 gap-3 items-center h-[calc(100vh-100px)]">
     <div class="flex flex-col gap-3">
       <PrimeInputText placeholder="name" v-model="DTO.name" />
-      <PrimeTextarea placeholder="description" v-model="DTO.description" rows="8" />
+      <PrimeTextarea placeholder="description" v-model="DTO.description" rows="8" :resize="false" />
       <PrimeMultiSelect
         :options="data?.documents"
         placeholder="stack"
@@ -28,14 +51,15 @@ const images = ref([]);
         display="chip"
         filter
         :maxSelectedLabels="5"
-        v-model="DTO.stack"
+        v-model="stack"
       />
       <PrimeInputText placeholder="time_spent" v-model="DTO.time_spent" />
-      <UiFileUpload v-model="images" :init="images"></UiFileUpload>
-      <!-- <pre class="absolute left-0 top-0">{{ DTO }}</pre> -->
+      <UiFileUpload v-model="images" :init="images" ref="File" />
+
+      <PrimeButton label="Add project" @click="addProject"></PrimeButton>
     </div>
-    <div class="">
-      <CardsProject :item="{ ...DTO, images: images }"></CardsProject>
+    <div class="" v-if="!isEmpty">
+      <CardsProject :item="{ ...DTO, images: images.map((e) => e.objectURL), stack: stack.map((e) => e.icon) }"></CardsProject>
     </div>
   </div>
 </template>

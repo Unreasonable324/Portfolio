@@ -3,10 +3,9 @@
 <div class="flex flex-col gap-5 my-5">
   <IndexMain/>
   <DecorSeparator/>
-  <IndexStack/>
+  <Stack/>
   <DecorSeparator/>
-  <IndexProjects/>
-
+  <projects/>
 </div>
 </template>
 <style></style>

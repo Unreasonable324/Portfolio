@@ -7,7 +7,7 @@ defineProps({
 });
 </script>
 <template>
-  <div class="border-slate-700 rounded-lg border flex flex-col gap-3 min-w-[320px] items-stretch">
+  <div class="border-slate-700 rounded-lg border flex flex-col  min-w-[320px] items-stretch">
     <PrimeGalleria
       :value="item.images"
       :numVisible="5"
@@ -17,9 +17,9 @@ defineProps({
       :pt="{ root: 'border-none' }"
     >
       <template #item="slotProps">
-        <PrimeImage alt="Image" :src="slotProps.item.objectURL" preview class="h-[300px]">
+        <PrimeImage alt="Image" :src="slotProps.item" preview class="h-[300px]">
           <template #image>
-            <img :src="slotProps.item.objectURL" alt="image" class="w-[100%] object-scale-down" style="width: 100%; display: block" />
+            <img :src="slotProps.item" alt="image" class="w-[100%] object-scale-down" style="width: 100%; display: block" />
           </template>
         </PrimeImage>
       </template>
@@ -32,11 +32,11 @@ defineProps({
         <UiTitle size="small" class="font-semibold">Stack:</UiTitle>
 
         <div class="rounded-md overflow-hidden" v-for="i in item.stack">
-          <img :src="i.icon" alt="" />
+          <img :src="i" alt="" />
         </div>
       </div>
       <div class="rounded-md overflow-hidden w-fit self-end">
-        <img :src="item.time_spent" alt="" />
+        <img :src="item.time_spent" alt="" class="w-[100%] object-cover" />
       </div>
     </div>
   </div>

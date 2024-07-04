@@ -28,7 +28,7 @@ const addStack = async () => {
       </div>
     </div>
     <div class="w-full flex justify-end my-10">
-      <div class="mr-0 w-1/2"><IndexStack /></div>
+      <div class="mr-0 w-1/2"><Stack /></div>
     </div>
   </div>
 </template>

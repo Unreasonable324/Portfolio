@@ -13,7 +13,7 @@ const uploadFiles = ref<any>([]);
 
 });
 const onChooseUploadFiles = () => {
-  fileUploaderRef.value.choose();
+  fileUploaderRef.value.clear();
 };
 const onSelectedFiles = (event: any) => {
     
@@ -24,8 +24,9 @@ const emit = defineEmits(["update:modelValue"]);
 
 function clear() {
   uploadFiles.value = [];
-  emit("update:modelValue", null);
+  emit("update:modelValue", []);
 }
+
 </script>
 
 <template>
@@ -91,7 +92,7 @@ function clear() {
           <div class="flex relative rounded-[6px] overflow-hidden shadow" v-for="file in init">
             <PrimeImage alt="Image" :src="file.image" preview>
               <template #image>
-                <img :src="file.image" alt="image" class=" w-[100%] object-scale-down" />
+                <img :src="file.image" alt="image" class=" w-[100%] object-scale-down" />sdf
               </template>
             </PrimeImage>
           </div>
