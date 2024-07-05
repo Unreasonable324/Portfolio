@@ -2,14 +2,9 @@
 <template>
   <div class="grid grid-cols-[1fr] xl:grid-cols-[auto_1fr] gap-[100px] items-center">
     <div class="flex flex-col gap-6 h-full">
-      <UiTitle>
-        Привет!<br />
-        меня зовут Андрей</UiTitle
-      >
+      <UiTitle> {{ $t("hello") }}<br>{{ $t("my_names") }}</UiTitle>
       <UiSubtitle size="medium">
-        Я Frontend разработчик с более чем 3-летним опытом в разработке веб-приложений на Vue.js, я готов помочь вам создавать современные и
-        интуитивно понятные пользовательские интерфейсы. Моя компетенция включает в себя разработку клиентской части приложения с использованием
-        фреймворка Vue.js
+       {{ $t("about_text") }}
       </UiSubtitle>
 
       <div class="mt-auto">
@@ -20,7 +15,7 @@
             >
               <UiTitle size="small">hh</UiTitle>
             </div>
-            <div class="">Резюме</div>
+            <div class="">{{ $t("cv") }}</div>
           </PrimeButton>
         </a>
       </div>

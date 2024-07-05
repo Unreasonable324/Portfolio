@@ -3,7 +3,7 @@ import type { PropType } from 'vue';
 
 defineProps({
   size: {
-    type: String as PropType<"large" | "medium" | "small">,
+    type: String as PropType<"large" | "medium" | "small"|"ultra_small">,
     default: "large",
   },
 });

@@ -1,7 +1,7 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 defineProps({
   size: {
-    type: String as PropType<"large" | "medium" | "small"|"base">,
+    type: String as PropType<"large" | "medium" | "small" | "base">,
     default: "large",
   },
 });
@@ -13,11 +13,10 @@ const sizes = {
 };
 </script>
 <template>
-<div class="">
-
-    <p class="tracking-wide text-gradient text-balance " :class="sizes[size]">
-  <slot></slot>
-      </p>
-</div>
-</template> 
+  <div class="">
+    <p class="tracking-wide text-gradient text-balance" :class="sizes[size]">
+      <slot></slot>
+    </p>
+  </div>
+</template>
 <style></style>

@@ -1,8 +1,9 @@
-export const nav = [
-  { label: "About", to: "/", hash: "#about" },
-  { label: "Projects", to: "/", hash: "#projects" },
-  { label: "Stack", to: "/", hash: "#stack" },
-];
+
+export const nav = (t:any)=>[
+  { label: t("about"), to: "/", hash: "#about" },
+  { label: t("projects"), to: "/", hash: "#projects" },
+  { label: t("stack"), to: "/", hash: "#stack" },
+]
 export const links = [
   { icon: "pi pi-github", url: "https://github.com/Unreasonable324" },
   { icon: "pi pi-telegram", url: "https://t.me/shumakov_epta" },

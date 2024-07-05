@@ -32,7 +32,7 @@ export const primevueConfig = {
   },
   components: {
     prefix: "Prime",
-    include: ["Button", "Drawer", "InputText", "Password", "Select","MultiSelect","Textarea","FileUpload","Image","Galleria"],
+    include: ["Button", "Drawer", "InputText", "Password", "Select","MultiSelect","Textarea","FileUpload","Image","Galleria","Skeleton"],
   },
   directives: {
     include: ["Ripple", "Tooltip"],

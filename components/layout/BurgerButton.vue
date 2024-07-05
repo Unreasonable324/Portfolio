@@ -22,7 +22,7 @@ watch(isVisible, () => {
               <!-- <div class="text-3xl text-white" v-for="item in nav" :key="item.label">
                 {{ item.label }}
               </div> -->
-              <div class="text-3xl text-white" v-for="item in nav" :key="item.label">
+              <div class="text-3xl text-white" v-for="item in nav($t)" :key="item.label">
           <!-- <NuxtLink :to="{ path: item.to, hash: item.hash }" :external="true" @click="closeCallback"> {{ item.label }}</NuxtLink> -->
           <a :href="item.hash"  @click="closeCallback">{{ item.label }}</a>
         </div>

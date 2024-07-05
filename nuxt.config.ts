@@ -17,11 +17,15 @@ export default defineNuxtConfig({
     ["@nuxtjs/tailwindcss", tailwindConfig],
     ["@nuxtjs/google-fonts", googleFontsConfig],
     "@primevue/nuxt-module",
-   [ "@nuxt/image", { provider: "ipx" }],
+    ["@nuxt/image", { provider: "ipx" }],
     "@pinia/nuxt",
+    "@nuxtjs/i18n",
   ],
   pinia: {
     storesDirs: ["./stores/**"],
+  },
+  i18n: {
+    vueI18n: "./plugins/i18n.ts",
   },
   primevue: primevueConfig as ModuleOptions,
 });

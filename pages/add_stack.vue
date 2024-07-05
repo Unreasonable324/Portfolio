@@ -4,7 +4,7 @@ import { COLLECTION_STACK_ID, DB_ID } from '~/app.constants';
 import { useQueryClient } from '@tanstack/vue-query';
 
 const queryClient = useQueryClient();
-const DTO = ref({
+const DTO = ref<{[key: string]: string}>({
   name: "",
   icon: "",
   category: "",
@@ -14,6 +14,7 @@ const addStack = async () => {
   const id = ID.unique();
   await DB.createDocument(DB_ID, COLLECTION_STACK_ID, id, { ...DTO.value, id });
   queryClient.invalidateQueries({ queryKey: ["stack"] });
+ Object.keys(DTO.value).forEach((e) => (DTO.value[e] = ""));
 };
 </script>
 <template>

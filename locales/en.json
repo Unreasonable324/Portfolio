@@ -1,0 +1,11 @@
+{
+  "language": "En",
+  "hello": "Hi!",
+  "my_names": "my name is Andrey",
+  "about_text": "I am a frontend developer with over 3 years of experience building web applications using Vue.js. I have a passion for creating modern and intuitive user experiences, and I am excited to contribute to your project. My expertise lies in developing the client-side of applications using the Vue.js framework.",
+  "cv": "CV",
+  "stack": "Stack",
+  "projects": "Projects",
+  "statistic": "Statistic",
+  "about": "About"
+}
