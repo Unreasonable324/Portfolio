@@ -5,8 +5,8 @@ const auth = useAuth();
 const router = useRouter();
 
 const DTO = ref({
-  email: "a8surd324@yandex.ru",
-  password: "aA9379992",
+  email: "",
+  password: "",
 });
 </script>
 <template>
