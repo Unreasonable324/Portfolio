@@ -27,10 +27,10 @@ const sortLight = (items: any) => items.sort((a: any, b: any) => b.name.length -
   <div class="flex flex-col gap-3">
   <UiTitle>{{ $t("stack") }}</UiTitle>
     <div class="flex flex-col gap-3" v-if="!isLoading">
-      <div class="flex flex-col gap-2" v-for="(value, key) in sortingCategory(data?.documents)">
+      <div class="flex flex-col gap-2" v-for="(value, key) in sortingCategory(data?.documents)" :key="key">
         <UiTitle size="medium">{{ locale === "ru" ? ru[key as keyof typeof ru] : key }}</UiTitle>
         <div class="flex  flex-wrap gap-3">
-          <div class="rounded-md overflow-hidden" v-for="item in sortLight(value)">
+          <div class="rounded-md overflow-hidden" v-for="item in sortLight(value)" :key="item.id">
             <img :src="item.icon" alt="" />
           </div>
         </div>
