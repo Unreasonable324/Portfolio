@@ -23,9 +23,9 @@ const addStack = async () => {
       <div class="flex flex-col gap-3 px-10">
         <UiTitle  class="font-semibold">Add stack</UiTitle>
 
-        <PrimeInputText label="name" placeholder="name" v-model="DTO.name" />
-        <PrimeInputText label="icon" placeholder="icon" v-model="DTO.icon" />
-        <PrimeSelect :options="categoriesStack" label="category" placeholder="category" v-model="DTO.category" />
+        <PrimeInputText label="name" placeholder="name" v-model="DTO.name" class="inputCustomTheme"/>
+        <PrimeInputText label="icon" placeholder="icon" v-model="DTO.icon" class="inputCustomTheme"/>
+        <PrimeSelect :options="categoriesStack" label="category" placeholder="category" v-model="DTO.category" class="inputCustomTheme"/>
         <PrimeButton label="Add stack" @click="addStack"></PrimeButton>
         <div class="rounded-md overflow-hidden flex w-fit self-center"><img :src="DTO.icon" alt="" class="" /></div>
       </div>

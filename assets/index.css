@@ -9,3 +9,9 @@
     scroll-behavior: smooth;
     scroll-padding-top: 72px;
   }
+
+
+  .inputCustomTheme{
+    background: transparent !important; 
+    color: #ffffff;
+  }

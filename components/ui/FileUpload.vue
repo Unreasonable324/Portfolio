@@ -47,7 +47,7 @@ function clear() {
         cancelButton: {
           root: { class: 'bg-red-500 border-red-700 border-solid ' },
         },
-        root: { class: 'flex flex-col  ' },
+        root: { class: 'flex flex-col inputCustomTheme ' },
         content: 'p-0 border-0',
       }"
     >
@@ -61,7 +61,7 @@ function clear() {
             <i class="pi pi-fw pi-plus text-4xl text-primary"></i>
           </div> -->
           <div
-            class="flex relative rounded-[6px] overflow-hidden  shadow"
+            class="flex relative rounded-[6px] overflow-hidden border shadow"
             v-for="file in uploadFiles"
             :style="{ cursor: 'copy', aspectRatio: '1/1' }"
           >

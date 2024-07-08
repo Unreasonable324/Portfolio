@@ -43,8 +43,8 @@ const isEmpty = computed(() => [Object.values(DTO.value).every((e) => !e.length)
     <div class="flex flex-col gap-3">
       <UiTitle  class="font-semibold">Add project</UiTitle>
 
-      <PrimeInputText placeholder="name" v-model="DTO.name" />
-      <PrimeTextarea placeholder="description" v-model="DTO.description" rows="8" :resize="false" />
+      <PrimeInputText placeholder="name" v-model="DTO.name" class="inputCustomTheme"/>
+      <PrimeTextarea placeholder="description" v-model="DTO.description" rows="8" :resize="false" class="inputCustomTheme"/>
       <PrimeMultiSelect
         :options="data?.documents"
         placeholder="stack"
@@ -54,8 +54,9 @@ const isEmpty = computed(() => [Object.values(DTO.value).every((e) => !e.length)
         filter
         :maxSelectedLabels="5"
         v-model="stack"
+        class="inputCustomTheme"
       />
-      <PrimeInputText placeholder="time_spent" v-model="DTO.time_spent" />
+      <PrimeInputText placeholder="time_spent" v-model="DTO.time_spent" class="inputCustomTheme"/>
       <UiFileUpload v-model="images" :init="images" ref="File" />
 
       <PrimeButton label="Add project" @click="addProject"></PrimeButton>

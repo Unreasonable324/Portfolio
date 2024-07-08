@@ -10,7 +10,7 @@ defineProps({
 });
 </script>
 <template>
-  <div class="border-slate-700 rounded-lg border flex flex-col  min-w-[320px] items-stretch">
+  <div class="border-slate-700 rounded-lg border flex flex-col  min-w-[320px] items-stretch overflow-hidden">
 
     <ClientOnly >
       <template #fallback>

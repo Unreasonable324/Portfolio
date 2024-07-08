@@ -14,10 +14,11 @@ import ru from '~/locales/ru.json';
 
 //   vueApp.use(i18n);
 // });
+
 export default defineI18nConfig(() => ({
-    legacy: false,
-    globalInjection: true,
-    locale: "ru",
+  legacy: false,
+  globalInjection: true,
+  locale: "ru",
   messages: {
     en,
     ru,

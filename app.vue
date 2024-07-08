@@ -9,8 +9,14 @@ onMounted(() => {
   if (route.name !== "index") {
   auth.get_me(router);
 }
-})
 
+})
+if (process.client) {
+  const localeStorageLang = localStorage.getItem("lang");
+// if (localeStorageLang) {
+  useI18n().locale.value = localeStorageLang || "ru";
+// }
+}
 </script>
 <template>
   <NuxtLayout>
