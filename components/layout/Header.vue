@@ -16,8 +16,7 @@ const router = useRouter();
       </NuxtLink>
       <div class="justify-evenly flex-1 hidden gap-2 sm:flex">
         <div class="" v-for="item in nav($t)" :key="item.label">
-          <!-- <NuxtLink :to="{ path: item.to, hash: item.hash }" :external="true"> {{ item.label }}</NuxtLink> -->
-          <a :href="item.hash">{{ item.label }}</a>
+          <a :href="item.hash" class="text-nowrap">{{ item.label }}</a>
         </div>
       </div>
       <div class="justify-between gap-3 hidden sm:flex">
