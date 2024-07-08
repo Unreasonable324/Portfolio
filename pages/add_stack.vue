@@ -26,7 +26,7 @@ const addStack = async () => {
         <PrimeInputText label="name" placeholder="name" v-model="DTO.name" class="inputCustomTheme"/>
         <PrimeInputText label="icon" placeholder="icon" v-model="DTO.icon" class="inputCustomTheme"/>
         <PrimeSelect :options="categoriesStack" label="category" placeholder="category" v-model="DTO.category" class="inputCustomTheme" :pt="{
-          label: { class: 'text-white' },
+          label: { class: '!text-white' },
         }"/>
         <PrimeButton label="Add stack" @click="addStack"></PrimeButton>
         <div class="rounded-md overflow-hidden flex w-fit self-center"><img :src="DTO.icon" alt="" class="" /></div>
