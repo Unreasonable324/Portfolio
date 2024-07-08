@@ -3,7 +3,7 @@
 <div class="flex flex-col gap-5 my-5">
   <IndexMain id="about"/>
   <DecorSeparator/>
-  <Stack id="stack"/>
+  <Stack id="stack" class="w-2/3"/>
   <DecorSeparator/>
   <Projects id="projects"/>
   <DecorSeparator/>
