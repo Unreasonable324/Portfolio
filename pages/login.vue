@@ -12,8 +12,8 @@ const DTO = ref({
 <template>
   <div class="flex items-center justify-center" :style="{ height: 'calc(100vh - 72px)' }">
     <div class="border-slate-700 rounded-lg border p-4 flex flex-col gap-4 min-w-[320px] items-stretch">
-      <PrimeInputText v-model="DTO.email" placeholder="Email" class="inputCustomTheme"/>
-      <PrimePassword :feedback="false" toggleMask v-model="DTO.password" inputClass="w-full inputCustomTheme" placeholder="Password" />
+      <PrimeInputText v-model="DTO.email" placeholder="Email" class="inputCustomTheme" />
+      <PrimePassword v-model="DTO.password" placeholder="Password" :feedback="false" toggleMask inputClass="w-full inputCustomTheme" />
       <PrimeButton label="login" @click="auth.login(DTO, router)" />
     </div>
   </div>

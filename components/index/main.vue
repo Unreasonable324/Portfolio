@@ -2,9 +2,9 @@
 <template>
   <div class="grid grid-cols-[1fr] xl:grid-cols-[auto_1fr] gap-[100px] items-center">
     <div class="flex flex-col gap-6 h-full">
-      <UiTitle> {{ $t("hello") }}<br>{{ $t("my_names") }}</UiTitle>
+      <UiTitle> {{ $t("hello") }}<br />{{ $t("my_names") }}</UiTitle>
       <UiSubtitle size="medium">
-       {{ $t("about_text") }}
+        {{ $t("about_text") }}
       </UiSubtitle>
 
       <div class="mt-auto">

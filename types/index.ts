@@ -1,4 +1,9 @@
 import type { Models } from 'appwrite';
+import type {
+  ComposerTranslation,
+  LocaleMessages,
+  VueMessageType,
+} from 'vue-i18n';
 
 export interface iProject {
   name: string;
@@ -15,3 +20,21 @@ interface stack {
   icon: string;
   name: string;
 }
+export interface iNav {
+  label: string;
+  to: string;
+  hash: string;
+}
+export type t = ComposerTranslation<
+{
+  [x: string]: LocaleMessages<VueMessageType>;
+},
+string,
+never,
+string,
+string
+>
+type category = "Design" | "Other" | "Database" | "Framework" | "Platform" | "Language" | "Library"
+export type iSortingCategory = {
+  [key in category]: iStack[];
+};
