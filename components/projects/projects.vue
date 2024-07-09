@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useProjectsQuery } from './useProjectsQuery';
 
-const { data, suspense, isLoading } = await useProjectsQuery();
+const { data, suspense } = await useProjectsQuery();
 
 await suspense();
 

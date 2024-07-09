@@ -1,6 +1,6 @@
 <script setup lang='ts'> </script>
 <template>
-<div class="loader ">L &nbsp; ading</div>
+<div class="loader text-nowrap">L &nbsp; ading</div>
 </template> 
 <style>
 

@@ -6,10 +6,12 @@ import { useQuery } from '@tanstack/vue-query';
 
 export const useStackQuery = () => useQuery(options(["stack"], async () => DB.listDocuments(DB_ID, COLLECTION_STACK_ID, [Query.limit(150)])));
 
-export const sortingCategory = (items: iStack[]): iSortingCategory =>
-  items.reduce<iSortingCategory>((acc, curr) => {
+export const sortingCategory = (items: iStack[] | undefined): iSortingCategory => {
+  if (!items) return {} as iSortingCategory;
+  return items.reduce<iSortingCategory>((acc, curr) => {
     acc[curr.category as keyof iSortingCategory] = [...(acc[curr.category as keyof iSortingCategory] || []), curr];
     return acc;
   }, {} as iSortingCategory);
+};
 
 export const sortLight = (items: iStack[]) => items.sort((a, b) => b.name.length - a.name.length);
