@@ -69,7 +69,7 @@ const clickImage = (img: string) => {
         :fullScreen="true"
         :showItemNavigators="true"
         :showThumbnails="false"
-        containerStyle="width: 100vw; height: calc(100vh ); border: none"
+        containerStyle="width: 100vw; height: calc(95vh ); border: none"
         :pt="{
           mask: '!z-[1200]',
           item: '!h-[calc(100vh)]',

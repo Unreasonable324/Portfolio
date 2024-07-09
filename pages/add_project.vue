@@ -15,7 +15,9 @@ await suspense();
 
 const DTO = ref<iProject>({
   name: "",
+  name_en:"",
   description: "",
+  description_en: "",
   stack: [],
   time_spent: "",
   images: [],
@@ -39,12 +41,14 @@ const addProject = async () => {
 const isEmpty = computed(() => [Object.values(DTO.value).every((e) => !e.length), !images.value.length, !stack.value.length].every((e) => e));
 </script>
 <template>
-  <div class="grid grid-cols-2 gap-3 items-center h-[calc(100vh-100px)]">
+  <div class="grid grid-cols-2 gap-3 items-center min-h-[calc(100vh-100px)] my-5">
     <div class="flex flex-col gap-3">
       <UiTitle  class="font-semibold">Add project</UiTitle>
 
       <PrimeInputText placeholder="name" v-model="DTO.name" class="inputCustomTheme"/>
-      <PrimeTextarea placeholder="description" v-model="DTO.description" rows="8" :resize="false" class="inputCustomTheme"/>
+      <PrimeInputText placeholder="name_en" v-model="DTO.name_en" class="inputCustomTheme"/>
+      <PrimeTextarea placeholder="description" v-model="DTO.description" rows="5" :resize="false" class="inputCustomTheme"/>
+      <PrimeTextarea placeholder="description_en" v-model="DTO.description_en" rows="5" :resize="false" class="inputCustomTheme"/>
       <PrimeMultiSelect
         :options="data?.documents"
         placeholder="stack"

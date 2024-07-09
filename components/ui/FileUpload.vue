@@ -54,7 +54,7 @@ function clear() {
           v-for="file in uploadFiles"
           :style="{ cursor: 'copy', aspectRatio: '1/1' }"
         >
-          <PrimeImage alt="Image" :src="file.objectURL" preview>
+          <PrimeImage alt="Image" :src="file.objectURL" preview class="flex items-center justify-center">
             <template #image>
               <img :src="file.objectURL" alt="image" class="w-[100%] object-scale-down" />
             </template>
@@ -71,7 +71,7 @@ function clear() {
       <div class="grid grid-cols-6 gap-2">
         <div class="flex relative rounded-[6px] overflow-hidden shadow" v-for="file in init">
           <PrimeImage alt="Image" :src="file.image" preview>
-            <template #image> <img :src="file.image" alt="image" class="w-[100%] object-scale-down" />sdf </template>
+            <template #image> <img :src="file.image" alt="image" class="w-[100%] object-scale-down" /> </template>
           </PrimeImage>
         </div>
       </div>

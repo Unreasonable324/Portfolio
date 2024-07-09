@@ -7,7 +7,9 @@ import type {
 
 export interface iProject {
   name: string;
+  name_en: string;
   description: string;
+  description_en: string;
   stack: string[];
   time_spent: string;
   create_date: string;
@@ -26,15 +28,15 @@ export interface iNav {
   hash: string;
 }
 export type t = ComposerTranslation<
-{
-  [x: string]: LocaleMessages<VueMessageType>;
-},
-string,
-never,
-string,
-string
->
-type category = "Design" | "Other" | "Database" | "Framework" | "Platform" | "Language" | "Library"
+  {
+    [x: string]: LocaleMessages<VueMessageType>;
+  },
+  string,
+  never,
+  string,
+  string
+>;
+type category = "Design" | "Other" | "Database" | "Framework" | "Platform" | "Language" | "Library";
 export type iSortingCategory = {
   [key in category]: iStack[];
 };
