@@ -29,12 +29,17 @@ const clickImage = (img: string) => {
         :showIndicators="true"
         showIndicatorsOnItem
         v-model:activeIndex="activeIndex"
-        :pt="{ root: '!border-none border-[#0F1624] ' , }"
+        :pt="{ root: '!border-none border-[#0F1624] ' }"
       >
         <template #item="slotProps">
-          <PrimeImage alt="Image" :src="slotProps.item" class="h-[300px] cursor-pointer !flex !items-center !justify-center"  @click="clickImage(slotProps.item)">
+          <PrimeImage
+            alt="Image"
+            :src="slotProps.item"
+            class="h-[300px] cursor-pointer !flex !items-center !justify-center"
+            @click="clickImage(slotProps.item)"
+          >
             <template #image>
-              <NuxtImg alt="Image" :src="slotProps.item" class="w-[100%] object-scale-down" style="width: 100%; display: block"></NuxtImg>
+              <NuxtImg alt="Image" :src="slotProps.item" class="!w-[100%] !object-scale-down" style="width: 100%; display: block !important"></NuxtImg>
             </template>
           </PrimeImage>
         </template> </PrimeGalleria
@@ -65,7 +70,14 @@ const clickImage = (img: string) => {
         :showItemNavigators="true"
         :showThumbnails="false"
         containerStyle="width: 100vw; height: calc(100vh ); border: none"
-        :pt="{ mask: '!z-[1200]', item: '!h-[calc(100vh)]', items: '!items-center', closeButton: '!absolute right-5 top-5 z-[1200]',previousItemButton:'!absolute !bg-[#0F162466]',nextItemButton:'!absolute !bg-[#0F162466]' }"
+        :pt="{
+          mask: '!z-[1200]',
+          item: '!h-[calc(100vh)]',
+          items: '!items-center',
+          closeButton: '!absolute right-5 top-5 z-[1200]',
+          previousItemButton: '!absolute !bg-[#0F162466]',
+          nextItemButton: '!absolute !bg-[#0F162466]',
+        }"
       >
         <template #item="slotProps">
           <NuxtImg alt="Image" :src="slotProps.item" class="object-scale-down" style="width: 100%; height: auto; display: block"></NuxtImg>
