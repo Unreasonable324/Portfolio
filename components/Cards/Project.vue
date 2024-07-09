@@ -35,7 +35,7 @@ const clickImage = (img: string) => {
           <PrimeImage
             alt="Image"
             :src="slotProps.item"
-            class="h-[300px] cursor-pointer !flex !items-center !justify-center"
+            class="h-[300px] cursor-pointer !flex "
             @click="clickImage(slotProps.item)"
           >
             <template #image>
