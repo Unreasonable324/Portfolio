@@ -65,10 +65,10 @@ const clickImage = (img: string) => {
         :showItemNavigators="true"
         :showThumbnails="false"
         containerStyle="width: 100vw; height: calc(100vh ); border: none"
-        :pt="{ mask: '!z-[1200]', item: '!h-[calc(100vh)]', items: '!items-center', closeButton: '!absolute right-5 top-5 z-[1200]' }"
+        :pt="{ mask: '!z-[1200]', item: '!h-[calc(100vh)]', items: '!items-center', closeButton: '!absolute right-5 top-5 z-[1200]',previousItemButton:'!absolute !bg-[#0F162466]',nextItemButton:'!absolute !bg-[#0F162466]' }"
       >
         <template #item="slotProps">
-          <NuxtImg alt="Image" :src="slotProps.item" class="object-scale-down" style="width: 90%; height: 80%; display: block"></NuxtImg>
+          <NuxtImg alt="Image" :src="slotProps.item" class="object-scale-down" style="width: 100%; height: auto; display: block"></NuxtImg>
         </template>
         <template #thumbnail="slotProps">
           <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block" />
