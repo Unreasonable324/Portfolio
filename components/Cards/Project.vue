@@ -32,14 +32,14 @@ const clickImage = (img: string) => {
         :pt="{ root: '!border-none border-[#0F1624] ' }"
       >
         <template #item="slotProps">
-          <PrimeImage
-            alt="Image"
-            :src="slotProps.item"
-            class="h-[300px] cursor-pointer !flex "
-            @click="clickImage(slotProps.item)"
-          >
+          <PrimeImage alt="Image" :src="slotProps.item" class="h-[300px] cursor-pointer !flex" @click="clickImage(slotProps.item)">
             <template #image>
-              <NuxtImg alt="Image" :src="slotProps.item" class="!w-[100%] !object-scale-down" style="width: 100%; display: block !important"></NuxtImg>
+              <NuxtImg
+                alt="Image"
+                :src="slotProps.item"
+                class="!w-[100%] !object-scale-down"
+                style="width: 100%; display: block !important"
+              ></NuxtImg>
             </template>
           </PrimeImage>
         </template> </PrimeGalleria
@@ -69,7 +69,7 @@ const clickImage = (img: string) => {
         :fullScreen="true"
         :showItemNavigators="true"
         :showThumbnails="false"
-        containerStyle="width: 100vw; height: calc(95vh ); border: none"
+        containerStyle="width: 100vw; height: calc(95vh); border: none;"
         :pt="{
           mask: '!z-[1200]',
           item: '!h-[calc(100vh)]',
