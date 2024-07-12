@@ -25,6 +25,12 @@ export default defineNuxtConfig({
       {
         id: "97811733",
         webvisor: true,
+        clickmap: true,
+        useCDN: true,
+        trackHash: true,
+        trackClicks: true,
+        trackLinks: true,
+        triggerEvent: true,
       },
     ],
   ],
