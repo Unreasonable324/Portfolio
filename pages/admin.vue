@@ -4,7 +4,9 @@ import { useAuth } from '~/stores/auth.store';
 const router = useRouter();
 const auth = useAuth();
 
-console.log('id => ', useYandexMetrika() );
+
+
+
 </script>
 <template>
   <div class="my-5" v-if="auth.isAuth">
