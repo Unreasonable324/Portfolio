@@ -30,6 +30,7 @@ export default defineNuxtConfig({
         trackHash: true,
         trackClicks: true,
         trackLinks: true,
+        consoleLog: false,
         triggerEvent: true,
       },
     ],
