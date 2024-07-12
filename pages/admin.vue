@@ -3,6 +3,8 @@ import { useAuth } from '~/stores/auth.store';
 
 const router = useRouter();
 const auth = useAuth();
+
+console.log('id => ', useYandexMetrika() );
 </script>
 <template>
   <div class="my-5" v-if="auth.isAuth">
@@ -11,6 +13,7 @@ const auth = useAuth();
       <NuxtLink to="/add_project"><PrimeButton label="Add project" icon="pi pi-plus" size="small" /></NuxtLink>
       <PrimeButton label="Exit" icon="pi pi-sign-out" @click="auth.logout(router)" size="small" />
     </div>
+    <YandexMetrikaInformer />
     <div class="">
       <Projects/>
     </div>

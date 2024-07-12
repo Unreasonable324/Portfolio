@@ -20,7 +20,18 @@ export default defineNuxtConfig({
     ["@nuxt/image", { provider: "ipx" }],
     "@pinia/nuxt",
     "@nuxtjs/i18n",
+    "nuxt-yandex-metrika"
   ],
+  yandexMetrika: {
+    id: '97811733',
+    // debug: process.env.NODE_ENV !== "production",
+    // delay: 0,
+    // cdn: false,
+    // verification: null, // Verification in Yandex Webmaster
+    // options: {
+    //  webvisor: true
+    // },
+  },
   pinia: {
     storesDirs: ["./stores/**"],
   },
